@@ -90,6 +90,8 @@ module.exports = {
             'doskey gclone=git clone https://github.com/$*.git',
             'doskey gg=git add . ^& git commit -m $* ^& git push',
             'doskey art=php artisan $*',
+            'doskey ~=cd /D C:\\Users\\James\\$*',
+            'doskey sub="C:\\Program Files\\Sublime Text 3\\sublime_text.exe" $*',
             'code',
             'c',
             'todo'
