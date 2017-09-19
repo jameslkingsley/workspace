@@ -73,6 +73,7 @@ module.exports = {
         quickEdit: true,
         // URL to custom bell
         // bellSoundURL: 'http://example.com/bell.mp3',
+
         commands: [
             'doskey c=cls',
             'doskey cd=cd /D $*',
@@ -89,12 +90,20 @@ module.exports = {
             'doskey gpp=git pull $*',
             'doskey gclone=git clone https://github.com/$*.git',
             'doskey gg=git add . ^& git commit -m $* ^& git push',
+            'doskey wip=git add . ^& git commit -m "Work in progress" ^& git push',
             'doskey art=php artisan $*',
             'doskey ~=cd /D C:\\Users\\James\\$*',
-            'doskey sub="C:\\Program Files\\Sublime Text 3\\sublime_text.exe" $*',
+            'doskey sub="C:\\Program Files\\Sublime Text 3\\sublime_text.exe" $* ^& cls',
+            'doskey py3="C:\\Program Files (x86)\\Python36-32\\python.exe" $*',
+            'doskey py2="C:\\Python27\\python.exe" $*',
+            'doskey missions=cd /D "C:\\Users\\James\\Documents\\Arma 3 - Other Profiles\\Kingsley\\Missions"',
+            'doskey gu=git reset --hard ^& git clean -df',
+            'doskey chrome="C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe" --unsafely-treat-insecure-origin-as-secure="http://$1" --user-data-dir="D:\\Documents\\Certs"',
+            'doskey mysql="C:\\laragon\\bin\\mysql\\mysql-5.7.18-winx64\\bin\\mysql.exe" -u root',
+            'doskey test=cls ^& vendor\\bin\\phpunit',
+            'doskey fresh=php artisan migrate:fresh --seed $*',
             'code',
-            'c',
-            'todo'
+            'c'
         ]
     },
     // a list of plugins to fetch and install from npm
@@ -103,9 +112,15 @@ module.exports = {
     //   `hyperpower`
     //   `@company/project`
     //   `project#1.0.1`
-    plugins: ["hyper-startup"],
+    plugins: ["hyper-startup", "hyperterm-material"],
     // in development, you can create a directory under
     // `~/.hyper_plugins/local/` and include it here
     // to load it and avoid it being `npm install`ed
-    localPlugins: []
+    localPlugins: [],
+
+    keymaps: {
+        "editor:copy": "ctrl+c",
+        "editor:paste": "ctrl+v",
+        "tab:new": "ctrl+t"
+    }
 };
